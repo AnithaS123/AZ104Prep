@@ -88,3 +88,21 @@ New-AzRoleAssignment -RoleDefinitionName "Contributor" -Scope "/subscriptions/<y
 
 # Example with service principal
 New-AzRoleAssignment -RoleDefinitionName "Contributor" -Scope "/subscriptions/<your_subscription_id>" -Assignee "<service_principal_id>"
+
+Explanation:
+
+New-AzRoleAssignment: This cmdlet is used to create a role assignment in Azure.
+RoleDefinitionName: Specifies the role to assign. In this case, "Contributor" provides broad permissions for managing resources within the subscription.
+Scope: Defines the scope of the role assignment. "/subscriptions/<your_subscription_id>" indicates that the role is assigned at the subscription level.
+Assignee: Specifies the user or entity to whom the role is assigned. You can use the user's principal name (UPN) or the service principal ID.
+Official Command Reference:
+
+New-AzRoleAssignment: You can find the official documentation and detailed information about this cmdlet on the Microsoft Docs website: https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-powershell
+Note:
+
+Replace <your_subscription_id>, <user_principal_name>, and <service_principal_id> with the actual values.
+You can use the Get-AzSubscription cmdlet to retrieve your subscription ID.
+You can use the Get-AzADUser cmdlet to retrieve the user's principal name.
+This command will create a security group named "IT Admins" and assign the "Contributor" role to the specified user or service principal at the subscription level. This allows the assigned entity to perform a wide range of management operations within the subscription.
+
+--------------------
