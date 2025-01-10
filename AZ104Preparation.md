@@ -106,3 +106,21 @@ You can use the Get-AzADUser cmdlet to retrieve the user's principal name.
 This command will create a security group named "IT Admins" and assign the "Contributor" role to the specified user or service principal at the subscription level. This allows the assigned entity to perform a wide range of management operations within the subscription.
 
 --------------------
+
+
+
+Key Differences between internal users and external users in Entra ID:
+
+Ownership: Internal users are owned and managed by your organization. External users are owned and managed by their own organization or themselves.
+Authentication: Internal users authenticate directly against your Azure AD. External users federate their authentication through their own identity provider.
+Licensing: Internal users generally require licenses from your organization. External users usually don't require licenses for basic guest access to resources.
+
+Key takeaways : 
+
+A tenant represents your organization and helps you to manage a specific instance of Microsoft cloud services for your internal and external users.
+Microsoft Entra ID has user and guest accounts. Each account has a level of access specific to the scope of work expected to be done.
+Groups combine together related users or devices. There are two types of groups including Security and Microsoft 365.
+Group membership can be statically or dynamically assigned.
+
+
+![alt text](image.png)
