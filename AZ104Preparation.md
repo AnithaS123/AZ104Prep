@@ -30,8 +30,8 @@ catch {
     Write-Error "Error initiating delta synchronization: $($_.Exception.Message)"
 }
 
+--------------------
 
---------------------------
 
 full sync
 
@@ -44,9 +44,9 @@ PowerShell
 Import-Module ADSync
 Start-ADSyncSyncCycle -PolicyType Initial
 
+--------------------
 
 
--------- 
 NetLogon Service
 
 The NetLogon service is a crucial component of Windows Server operating systems in a domain environment. It's responsible for locating domain controllers, authenticating users and computers, and maintaining secure communication channels within the domain.   
@@ -115,7 +115,7 @@ Ownership: Internal users are owned and managed by your organization. External u
 Authentication: Internal users authenticate directly against your Azure AD. External users federate their authentication through their own identity provider.
 Licensing: Internal users generally require licenses from your organization. External users usually don't require licenses for basic guest access to resources.
 
-Key takeaways : 
+Key takeaways
 
 A tenant represents your organization and helps you to manage a specific instance of Microsoft cloud services for your internal and external users.
 Microsoft Entra ID has user and guest accounts. Each account has a level of access specific to the scope of work expected to be done.
