@@ -124,3 +124,38 @@ Group membership can be statically or dynamically assigned.
 
 
 ![alt text](image.png)
+
+----------------------------------------------------
+
+Azure PowerShell Commands:
+
+Add a Resource Lock:
+
+New-AzResourceLock -ResourceGroupName <ResourceGroupName> -LockLevel "CanNotDelete" -LockName <LockName>
+
+Delete a Resource Lock:
+
+Remove-AzResourceLock -ResourceGroupName <ResourceGroupName> -LockName <LockName> -Force 
+
+Azure CLI Commands:
+
+Add a Resource Lock:
+Code snippet
+
+az resource lock create --name <LockName> --lock-type CanNotDelete --resource-group <ResourceGroupName>
+Delete a Resource Lock:
+Code snippet
+
+az resource lock delete --name <LockName> --resource-group <ResourceGroupName>
+
+ResourceGroupName: Replace with the actual name of your resource group.
+LockName: Replace with a unique name for the lock.
+LockLevel: "CanNotDelete" is the most common lock level, preventing deletion of the resource group and its contents. Other levels include "ReadOnly" and "None" (to remove a lock).
+-Force: This parameter is used with the Remove-AzResourceLock cmdlet to confirm the deletion of the lock.
+
+
+------------------------------
+
+![alt text](image-1.png)
+
+
