@@ -161,3 +161,41 @@ LockLevel: "CanNotDelete" is the most common lock level, preventing deletion of 
 
 --------------------
 
+1. Using Azure CLI
+
+Find resources with a specific tag name and value:
+Bash
+
+az resource list --tag "Environment=Production" --query "[].{Name:name, ResourceGroup:resourceGroup}" --output table
+Find resources with a specific tag name (any value):
+Bash
+
+az resource list --tag "Owner" --query "[].{Name:name, ResourceGroup:resourceGroup}" --output table
+2. Using Azure PowerShell
+
+Find resources with a specific tag name and value:
+PowerShell
+
+Get-AzResource -Tag "Environment" "Production" | Select-Object Name, ResourceGroupName
+Find resources with a specific tag name (any value):
+PowerShell
+
+Get-AzResource -TagName "Owner" | Select-Object Name, ResourceGroupName
+3. Using Azure Resource Graph Explorer
+
+Open Resource Graph Explorer: You can find it in the Azure portal.   
+Write a KQL query: For example, to find resources with the tag "Environment=Production":
+Code snippet
+
+resources
+| where type =~ "Microsoft.Compute/virtualMachines" 
+| where tags.Environment == "Production"
+| project name, resourceGroup
+Explanation:
+
+These commands filter resources based on the specified tag name and value.   
+You can modify the tag name and value to match your specific requirements.
+The output can be customized to display the desired information (e.g., resource name, resource group, type, location).
+
+
+---------------------
